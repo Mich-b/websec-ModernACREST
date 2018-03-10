@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  identityserver:
+    image: identityserver
+    build:
+      context: ./Identityserver
+      dockerfile: src/Dockerfile
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
+    ports:
+      - "8080:8080"
+
+  movieswebapp:
+    image: movieswebapp
+    build:
+      context: ./MoviesWebApp
+      dockerfile: src/Dockerfile
+    environment:
+      - ASPNETCORE_URLS=http://+:8081
+    ports:
+      - "8081:8081"
+    #link required because the productapi loads the openidconfiguration from idsrv
