@@ -1,5 +1,9 @@
 version: '3'
 
+networks:
+  default:
+    driver: nat
+
 services:
   identityserver:
     image: identityserver
@@ -10,6 +14,8 @@ services:
       - ASPNETCORE_URLS=http://+:8080
     ports:
       - "8080:8080"
+    networks:
+     - default
 
   movieswebapp:
     image: movieswebapp
@@ -20,4 +26,5 @@ services:
       - ASPNETCORE_URLS=http://+:8081
     ports:
       - "8081:8081"
-    #link required because the productapi loads the openidconfiguration from idsrv
+    networks:
+     - default
