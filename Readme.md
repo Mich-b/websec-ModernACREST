@@ -4,8 +4,6 @@ Set of Docker containers used during various trainings about modern access contr
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 Make sure to add the following items to your hosts file:
 ```
 127.0.0.1	identityserver
@@ -23,8 +21,8 @@ docker-compose -f docker-compose.yml up
 ```
 
 * Movieswebapp (Client) runs on http://movieswebapp:8081
-* Identityserver (OIDC) runs on http://identityserver:8080
-* Shibboleth (SAML) runs on http://shibbolethidp:8090
+* Identityserver (OP) runs on http://identityserver:8080
+* Shibboleth (SAML IdP) runs on http://shibbolethidp:8090
 
 You typically want to go to the movieswebapp to start.
 
