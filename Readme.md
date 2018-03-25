@@ -63,7 +63,7 @@ docker-compose -f docker-compose.yml up --force-recreate
 ```
 
 If all else fails, remove all containers and start over (run this from a unix bash, on Windows you can run it from git bash)
-*Warning: this will remove all docker containers, not just the ones created in this project*
+**Warning: this will remove all docker containers, not just the ones created in this project**
 ```
 docker stop $(docker ps -aq)
 docker rm $(docker ps -aq)
