@@ -36,6 +36,12 @@ What things you need to install the software and how to install them
 
 All of the applications run over plain HTTP. You should be using HTTPS when using these for something other than educational purposes. 
 
+## Improvements
+
+Some of the improvements I would like to make when I find the time:
+* Single log-out for the SAML-side of things (OIDC's single log-out is configured)
+* Addition of other clients to show various OIDC flows
+
 ## Acknowledgments
 
 * [Unicon idptestbed](https://github.com/Unicon/shibboleth-idp-dockerized) - Test suite for the Unicon docker images 
