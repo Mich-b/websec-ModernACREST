@@ -40,7 +40,7 @@ All of the applications run over plain HTTP. You should be using HTTPS when usin
 
 * [Unicon idptestbed](https://github.com/Unicon/shibboleth-idp-dockerized) - Test suite for the Unicon docker images 
 * [Johan Peeters' Github](https://github.com/JohanPeeters/REST-IAM-demo) - Containers from a previous work-shop, given by Johan Peeters and myself
-* [Movieswebapp & Identityserver](http://docs.identityserver.io/en/release/intro/big_picture.html) - Demo application used by Brock Allen and Dominick Baierduring the NDC conference in London
+* [Movieswebapp & Identityserver](http://docs.identityserver.io/en/release/intro/big_picture.html) - Demo application used by Brock Allen and Dominick Baier during the NDC conference in London
 
 No project in this repo is an exact copy of the sources.
 
