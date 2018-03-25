@@ -53,3 +53,21 @@ No project in this repo is an exact copy of the sources.
 ## Issues
 
 Please feel free to post issues, or inform me about improvements.
+
+## Start from scratch
+
+If things don't work out, you can try to start from a new build:
+```
+docker-compose build --no-cache
+docker-compose -f docker-compose.yml up --force-recreate
+```
+
+If all else fails, remove all containers and start over (run this from a unix bash, on Windows you can run it from git bash)
+*Warning: this will remove all docker containers, not just the ones created in this project*
+```
+docker stop $(docker ps -aq)
+docker rm $(docker ps -aq)
+docker rmi $(docker images -q)
+docker-compose build
+docker-compose -f docker-compose.yml up
+```
