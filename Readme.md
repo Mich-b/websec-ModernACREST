@@ -20,7 +20,7 @@ docker-compose -f docker-compose.yml build
 docker-compose -f docker-compose.yml up
 ```
 
-* Movieswebapp (Client) runs on http://movieswebapp:8081
+* Movieswebapp (SAML SP - OIDC RP) runs on http://movieswebapp:8081
 * Identityserver (OP) runs on http://identityserver:8080
 * Shibboleth (SAML IdP) runs on http://shibbolethidp:8090
 
