@@ -30,6 +30,17 @@ namespace MoviesWebApp.Controllers
             //return View(new LoginViewModel { ReturnUrl = returnUrl });
         }
 
+        [HttpGet]
+        public IActionResult LoginSaml(string returnUrl)
+        {
+            return Challenge(new AuthenticationProperties
+            {
+                RedirectUri = returnUrl ?? "/"
+            }, "Saml2");
+
+            //return View(new LoginViewModel { ReturnUrl = returnUrl });
+        }
+
         // NOTICE: this was commented out since it's unnecessary now
         //[HttpPost]
         //public async Task<IActionResult> Login(LoginViewModel model)
@@ -59,9 +70,12 @@ namespace MoviesWebApp.Controllers
         //    return View();
         //}
 
-        public IActionResult Logout()
+
+        public ActionResult Logout()
         {
-            return SignOut(new AuthenticationProperties {
+            //no sign out for SAML implemented, relying on cookie logout. This DOES NOT LOG THE USER OUT FROM THE IDP, in contrast to the oidc implementation
+            return SignOut(new AuthenticationProperties
+            {
                 RedirectUri = "/"
             }, "oidc", "Cookies");
         }

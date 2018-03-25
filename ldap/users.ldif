@@ -1,0 +1,31 @@
+dn: cn=admin,dc=portasecura
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+userPassword: password
+description: LDAP administrator
+
+
+dn: uid=student1,ou=People,dc=portasecura
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: inetOrgPerson
+givenName: Stud
+uid: student1
+sn: Ent
+cn: Stud Ent
+mail: student1@portasecura.com
+userPassword: password
+
+dn: uid=michael,ou=People,dc=portasecura
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: inetOrgPerson
+givenName: St
+uid: michael
+sn: aff
+cn: St aff
+mail: michael.boeynaems@portasecura.com
+userPassword: password

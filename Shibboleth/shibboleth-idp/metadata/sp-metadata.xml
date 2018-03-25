@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EntityDescriptor ID="_df136d94-0507-4ec0-a4c2-0b584191da21" entityID="http://movieswebapp:8081" cacheDuration="PT1H" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
+	<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+		<SignedInfo>
+			<CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+			<SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+			<Reference URI="#_df136d94-0507-4ec0-a4c2-0b584191da21">
+				<Transforms>
+					<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+					<Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+				</Transforms>
+				<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+				<DigestValue>QHWjCEgnJJhjXAI+4Mgv56q+f1sK7liRLaXxkWaQXJ0=</DigestValue>
+			</Reference>
+		</SignedInfo>
+		<SignatureValue>ZJAPwf1/dMan5hE8qwn2egYvOO5lW5ODOJ/Vr1E32rcFJLZh/knA61iH7s0pNA8V4AtJ45ExhnC6RKdhPvdHn14747efvYLhVR/Q2zSg9pSMQ2x/oV7NUDj8s10ORO2+7SXlTOWIVRDT8P7Z+/N0+kqUe+OcAC11EEJOCr7nH7jYInwUnsQyZ5R+E4FNK80SgLI/ow/rYY2gqoKXwYEpFfINvkCySE7ozeShAXxSPaEloR2p6FY15cG8FCYVtiZtEtWgtUbbCnKMCtshyZ0ZVYczvk3npqMI2Wvy6GSloNE/vD1wejXAc653W2SmpF+6rfbLFBKjkuisxyaBCWvT/g==</SignatureValue>
+		<KeyInfo>
+			<X509Data>
+				<X509Certificate>MIIDIjCCAgqgAwIBAgIQyl66X2NfPZ9ItR+QGeFgUjANBgkqhkiG9w0BAQ0FADAhMR8wHQYDVQQDExZTdXN0YWluc3lzLlNhbWwyLlRlc3RzMB4XDTE3MTIyODEwNDExMVoXDTM5MTIzMTIzNTk1OVowITEfMB0GA1UEAxMWU3VzdGFpbnN5cy5TYW1sMi5UZXN0czCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK3KOkmZiRCRh37yDqhm7YDpmO9NqcrKLqDr3PLcBa46sGNKcqOtJ75mHvBWcxnRzs2aY2lidnHXYZu3Au5i2Isu/yC2gYTfnsSx8gTf9nfkD0IGc895cJyw9jmiTXY6N85yjVY0GFeeKxiI6GMQFN/MSh3kftRGF8ERcfjTV0GXByMAoo1xAUwHZeEF+nc5xp4nJ5bHDL48cWyh+NtuWhXgo7Be3S0cJkW1gxwEuflBETR6S7+u7IB2N6LhSFoFpiXE6F53cLlYbxgaXoIfliGQBvryPAvpUIyYItZ8rDfg1x1SPEGsJBcTSUopoOGBd8DSP/Kx7eN7yqz3LlG/CE0CAwEAAaNWMFQwUgYDVR0BBEswSYAQuuOxcm4IHKU2M9sXyo4A9qEjMCExHzAdBgNVBAMTFlN1c3RhaW5zeXMuU2FtbDIuVGVzdHOCEMpeul9jXz2fSLUfkBnhYFIwDQYJKoZIhvcNAQENBQADggEBAJbFk/8vvIzn/4PdOwqHIez9vDtcAokXoEm2bJrwdAGnhZ6ThEgP+Bt0H1jtHQrpKqOEAG0bKyCg4WQBcrWXkIP+9WSerpPy7Y2d47hYuQASkyinCFRbnjUtfLedCcp9uSl8pcGRFBDUdTi80Ht4D+BJEAjSugIMmeTwBm1U9rFASIjzXHJz34RbBvECqBEe6LA7nH1UQd1K0IU05Y0kuj6Hdv+QVlzRrZaY6gMpigpHNJyWT4BO8c5glm/T/UKvJol8oVaxiKpVNFUQnPBPhcyTGjxRkKLqZOStNh9rDg0c4uM1smZaChE+mvH9yhT4yx1KZJqwIXxXEPrtSfPj3Xs=</X509Certificate>
+			</X509Data>
+		</KeyInfo>
+	</Signature>
+	<SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+		<KeyDescriptor>
+			<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+				<X509Data>
+					<X509Certificate>MIIDIjCCAgqgAwIBAgIQyl66X2NfPZ9ItR+QGeFgUjANBgkqhkiG9w0BAQ0FADAhMR8wHQYDVQQDExZTdXN0YWluc3lzLlNhbWwyLlRlc3RzMB4XDTE3MTIyODEwNDExMVoXDTM5MTIzMTIzNTk1OVowITEfMB0GA1UEAxMWU3VzdGFpbnN5cy5TYW1sMi5UZXN0czCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK3KOkmZiRCRh37yDqhm7YDpmO9NqcrKLqDr3PLcBa46sGNKcqOtJ75mHvBWcxnRzs2aY2lidnHXYZu3Au5i2Isu/yC2gYTfnsSx8gTf9nfkD0IGc895cJyw9jmiTXY6N85yjVY0GFeeKxiI6GMQFN/MSh3kftRGF8ERcfjTV0GXByMAoo1xAUwHZeEF+nc5xp4nJ5bHDL48cWyh+NtuWhXgo7Be3S0cJkW1gxwEuflBETR6S7+u7IB2N6LhSFoFpiXE6F53cLlYbxgaXoIfliGQBvryPAvpUIyYItZ8rDfg1x1SPEGsJBcTSUopoOGBd8DSP/Kx7eN7yqz3LlG/CE0CAwEAAaNWMFQwUgYDVR0BBEswSYAQuuOxcm4IHKU2M9sXyo4A9qEjMCExHzAdBgNVBAMTFlN1c3RhaW5zeXMuU2FtbDIuVGVzdHOCEMpeul9jXz2fSLUfkBnhYFIwDQYJKoZIhvcNAQENBQADggEBAJbFk/8vvIzn/4PdOwqHIez9vDtcAokXoEm2bJrwdAGnhZ6ThEgP+Bt0H1jtHQrpKqOEAG0bKyCg4WQBcrWXkIP+9WSerpPy7Y2d47hYuQASkyinCFRbnjUtfLedCcp9uSl8pcGRFBDUdTi80Ht4D+BJEAjSugIMmeTwBm1U9rFASIjzXHJz34RbBvECqBEe6LA7nH1UQd1K0IU05Y0kuj6Hdv+QVlzRrZaY6gMpigpHNJyWT4BO8c5glm/T/UKvJol8oVaxiKpVNFUQnPBPhcyTGjxRkKLqZOStNh9rDg0c4uM1smZaChE+mvH9yhT4yx1KZJqwIXxXEPrtSfPj3Xs=</X509Certificate>
+				</X509Data>
+			</KeyInfo>
+		</KeyDescriptor>
+		<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://movieswebapp:8081/Saml2/Logout" />
+		<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://movieswebapp:8081/Saml2/Logout" />
+		<AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://movieswebapp:8081/Saml2/Acs" index="0" isDefault="true" />
+		<AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="http://movieswebapp:8081/Saml2/Acs" index="1" isDefault="false" />
+	</SPSSODescriptor>
+</EntityDescriptor>

@@ -35,15 +35,16 @@
                 </ul>
                 <div class="navbar-right">
                     @if (!User.Identity.IsAuthenticated)
-                    {
-                        <span class="navbar-text">Not logged in</span>
-                        <a class="navbar-text" asp-controller="Account" asp-action="Login">Login</a>
-                    }
-                    else
-                    {
-                        <span class="navbar-text">Logged in as: @User.Identity.Name</span>
-                        <a class="navbar-text" asp-controller="Account" asp-action="Logout">Logout</a>
-                    }
+    {
+                <span class="navbar-text">Not logged in</span>
+                <a class="navbar-text" asp-controller="Account" asp-action="Login">Login met OIDC</a>
+                <a class="navbar-text" asp-controller="Account" asp-action="LoginSaml">Login met SAML</a>
+}
+else
+{
+                <span class="navbar-text">Logged in as: @User.Identity.Name</span>
+                <a class="navbar-text" asp-controller="Account" asp-action="Logout">Logout</a>
+}
                 </div>
             </div>
         </div>

@@ -2,18 +2,26 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+	<PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
   </PropertyGroup>
-
+	  
+<PropertyGroup>
+    <EnableDefaultContentItems>false</EnableDefaultContentItems>
+</PropertyGroup>
+	  
+<ItemGroup>
+   <Content Include="wwwroot\**" CopyToPublishDirectory="Never" />
+</ItemGroup>
+	  
   <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
-
-  <ItemGroup>
+	<Content Include="Views\**\*" CopyToPublishDirectory="PreserveNewest" />
     <ProjectReference Include="..\MoviesLibrary\MoviesLibrary.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <PackageReference Include="Sustainsys.Saml2.AspNetCore2" Version="2.0.0-preview01" />
   </ItemGroup>
+
 
 </Project>

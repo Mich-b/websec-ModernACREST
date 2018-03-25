@@ -1,22 +1,24 @@
 FROM microsoft/aspnetcore:latest AS base
 WORKDIR /app
-#This docker image runs the application on port 80
 EXPOSE 80
 
+
 FROM microsoft/aspnetcore-build:latest AS build
-WORKDIR /src
-COPY *.sln ./
-COPY src/MoviesWebApp/MoviesWebApp.csproj src/MoviesWebApp/
-COPY src/MoviesLibrary/MoviesLibrary.csproj src/MoviesLibrary/
-RUN dotnet restore
 COPY . .
-WORKDIR /src/src/MoviesWebApp
-RUN dotnet publish -c Release -o /app
+WORKDIR ./src/MoviesWebApp
+RUN dotnet build -c Release -o /app
 
 FROM build AS publish
 RUN dotnet publish -c Release -o /app
+#workaround for docker on Linux, along with changes in the movieswebapp.csproj file
+COPY src/MoviesWebApp/wwwroot/** /app/wwwroot/
+#need to find a better way to copy crt and pfx
+COPY src/MoviesWebApp/*.crt /app
+COPY src/MoviesWebApp/*.pfx /app
 
-FROM base AS final 
+
+FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "MoviesWebApp.dll"]
+EXPOSE 80
