@@ -1,8 +1,8 @@
-FROM microsoft/aspnetcore:latest AS base
+FROM microsoft/aspnetcore:2.0.6 AS base
 WORKDIR /app
 EXPOSE 80
 
-FROM microsoft/aspnetcore-build:latest AS build
+FROM microsoft/aspnetcore-build:2.0.6-2.1.101 AS build
 WORKDIR /src
 COPY *.sln ./
 COPY src/IdentityServer.csproj src/
