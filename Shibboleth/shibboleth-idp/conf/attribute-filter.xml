@@ -17,12 +17,16 @@
     <AttributeFilterPolicy id="example1">
         <PolicyRequirementRule xsi:type="OR">
             <Rule xsi:type="Requester" value="http://movieswebapp:8081" />
-            <Rule xsi:type="Requester" value="http://idptestbed/sp/simplesamlphp" />
         </PolicyRequirementRule>
 
 		<AttributeRule attributeID="mail">
             <PermitValueRule xsi:type="ANY" />
         </AttributeRule>
+		
+		    <!-- Schema: Exercise 5-->
+<!-- 		<AttributeRule attributeID="role">
+            <PermitValueRule xsi:type="ANY" />
+        </AttributeRule> -->
 		
         <AttributeRule attributeID="eduPersonPrincipalName">
             <PermitValueRule xsi:type="ANY" />

@@ -26,6 +26,6 @@ objectClass: inetOrgPerson
 givenName: St
 uid: michael
 sn: aff
-cn: St aff
+cn: something
 mail: michael.boeynaems@portasecura.com
 userPassword: password
