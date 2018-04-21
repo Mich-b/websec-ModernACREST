@@ -54,7 +54,7 @@ namespace IdentityServer.Configuration
                         IdentityServerConstants.StandardScopes.Email,
                         IdentityServerConstants.StandardScopes.Address,
                         "role",
-
+                        "productapi.read"
                     }
                 }
             };

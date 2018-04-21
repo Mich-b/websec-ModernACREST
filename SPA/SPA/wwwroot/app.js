@@ -14,6 +14,7 @@
 
 
 document.getElementById("login").addEventListener("click", login, false);
+document.getElementById("api").addEventListener("click", api, false);
 document.getElementById("logout").addEventListener("click", logout, false);
 
 
@@ -21,8 +22,8 @@ var config = {
     authority: "http://identityserver:8080",
     client_id: "SPA",
     redirect_uri: "http://localhost:8082/callback.html",
-    response_type: "id_token",
-    scope: "openid profile role",
+    response_type: "id_token token",
+    scope: "openid profile role productapi.read",
     post_logout_redirect_uri: "http://localhost:8082/index.html",
 };
 var mgr = new Oidc.UserManager(config);
@@ -41,6 +42,20 @@ mgr.getUser().then(function (user) {
 
 function login() {
     mgr.signinRedirect();
+}
+
+function api() {
+    mgr.getUser().then(function (user) {
+        var url = "http://localhost:8083/api/product";
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url);
+        xhr.onload = function () {
+            log(xhr.status, JSON.parse(xhr.responseText));
+        }
+        xhr.setRequestHeader("Authorization", "Bearer " + user.access_token);
+        xhr.send();
+    });
 }
 
 function logout() {
