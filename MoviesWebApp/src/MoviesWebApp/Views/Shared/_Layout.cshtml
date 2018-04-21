@@ -37,8 +37,8 @@
                     @if (!User.Identity.IsAuthenticated)
     {
                 <span class="navbar-text">Not logged in</span>
-                <a class="navbar-text" asp-controller="Account" asp-action="Login">Login met OIDC</a>
-                <a class="navbar-text" asp-controller="Account" asp-action="LoginSaml">Login met SAML</a>
+                <a class="navbar-text" asp-controller="Account" asp-action="Login">Login with OIDC</a>
+                <a class="navbar-text" asp-controller="Account" asp-action="LoginSaml">Login with SAML</a>
 }
 else
 {
