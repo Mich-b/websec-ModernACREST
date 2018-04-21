@@ -28,7 +28,31 @@ services:
       - "8081:8081"
     networks:
      - default
-     
+
+  singlepageapp:
+    image: singlepageapp
+    build:
+      context: ./SPA
+      dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_URLS=http://+:8082
+    ports:
+      - "8082:8082"
+    networks:
+     - default 
+
+  productapi:
+    image: productapi
+    build:
+      context: ./ProductAPI
+      dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_URLS=http://+:8083
+    ports:
+      - "8083:8083"
+    networks:
+     - default     
+  
   shibboleth:
     build: ./Shibboleth/
     depends_on: 
