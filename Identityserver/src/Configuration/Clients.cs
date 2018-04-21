@@ -35,12 +35,12 @@ namespace IdentityServer.Configuration
                         "role"
                      }
                 },
-                // Postman resource owner flow
+                // Postman client credentials flow
                 new Client
                 {
                     ClientId = "postman",
                     ClientName = "postman",
-                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,
                     ClientSecrets =
                     {
                         new Secret("secret".Sha256())
