@@ -24,7 +24,7 @@ namespace IdentityServer.Configuration
 
                     RedirectUris =           { "http://movieswebapp:8081/signin-oidc" },
                     PostLogoutRedirectUris = { "http://movieswebapp:8081/signout-callback-oidc" },
-                    AllowedCorsOrigins =     { "" },
+                    AllowedCorsOrigins =     { "http://movieswebapp:8081" },
 
                     AllowedScopes =
                     {
