@@ -13,30 +13,6 @@ namespace IdentityServer.Configuration
         {
             return new List<Client>
             {
-
-                // JavaScript Client
-                new Client
-                {
-                    ClientId = "JSClient",
-                    ClientName = "JSClient",
-                    AllowedGrantTypes = GrantTypes.Implicit,
-                    AllowAccessTokensViaBrowser = true,
-                    AlwaysIncludeUserClaimsInIdToken = true,
-
-                    RedirectUris =           { "/callback.html" },
-                    PostLogoutRedirectUris = { "/index.html" },
-                    AllowedCorsOrigins =     { "" },
-
-                    AllowedScopes =
-                    {
-                        IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile,
-                        IdentityServerConstants.StandardScopes.Email,
-                        IdentityServerConstants.StandardScopes.Address,
-                        "product.read",
-                        "product.readwrite",
-                    }
-                },
                 // MoviesWebApp Client
                 new Client
                 {
@@ -59,33 +35,7 @@ namespace IdentityServer.Configuration
                         "role"
                      }
                 },
-                // Postman resource owner flow
-                new Client
-
-                {
-                    ClientId = "postman",
-                    ClientName = "postman",
-                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
-                    ClientSecrets =
-                    {
-                        new Secret("secret".Sha256())
-                    },
-                    AllowedScopes = { "product.read" }
-                },
-
-                // Postman client credentials
-                new Client
-
-                {
-                    ClientId = "postmanclientgrant",
-                    ClientName = "postmanclientgrant",
-                    AllowedGrantTypes = GrantTypes.ClientCredentials,
-                    ClientSecrets =
-                    {
-                        new Secret("secret".Sha256())
-                    },
-                    AllowedScopes = { "product.read" }
-                },
+ 
             };
         }
     }
