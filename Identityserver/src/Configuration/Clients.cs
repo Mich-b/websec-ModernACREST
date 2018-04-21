@@ -43,9 +43,9 @@ namespace IdentityServer.Configuration
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
 
-                    RedirectUris =           { "http://localhost:8082/callback.html" },
-                    PostLogoutRedirectUris = { "http://localhost:8082/index.html" },
-                    AllowedCorsOrigins =     { "http://localhost:8082" },
+                    RedirectUris =           { "http://singlepageapp:8082/callback.html" },
+                    PostLogoutRedirectUris = { "http://singlepageapp:8082/index.html" },
+                    AllowedCorsOrigins =     { "http://singlepageapp:8082" },
 
                     AllowedScopes =
                     {

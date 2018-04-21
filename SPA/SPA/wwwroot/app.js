@@ -20,10 +20,10 @@ document.getElementById("logout").addEventListener("click", logout, false);
 var config = {
     authority: "http://identityserver:8080",
     client_id: "SPA",
-    redirect_uri: "http://localhost:8082/callback.html",
+    redirect_uri: "http://singlepageapp:8082/callback.html",
     response_type: "id_token",
     scope: "openid profile role",
-    post_logout_redirect_uri: "http://localhost:8082/index.html",
+    post_logout_redirect_uri: "http://singlepageapp:8082/index.html",
 };
 var mgr = new Oidc.UserManager(config);
 
