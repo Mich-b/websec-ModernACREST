@@ -24,7 +24,7 @@ namespace IdentityServer.Configuration
 
                     RedirectUris =           { "http://movieswebapp:8081/signin-oidc" },
                     PostLogoutRedirectUris = { "http://movieswebapp:8081/signout-callback-oidc" },
-                    AllowedCorsOrigins =     { "http://localhost:8081" },
+                    AllowedCorsOrigins =     { "http://movieswebapp:8081" },
 
                     AllowedScopes =
                     {
@@ -43,9 +43,9 @@ namespace IdentityServer.Configuration
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
 
-                    RedirectUris =           { "http://localhost:8082/callback.html" },
-                    PostLogoutRedirectUris = { "http://localhost:8082/index.html" },
-                    AllowedCorsOrigins =     { "http://localhost:8082" },
+                    RedirectUris =           { "http://singlepageapp:8082/callback.html" },
+                    PostLogoutRedirectUris = { "http://singlepageapp:8082/index.html" },
+                    AllowedCorsOrigins =     { "http://singlepageapp:8082" },
 
                     AllowedScopes =
                     {

@@ -45,7 +45,7 @@ namespace ProductAPI
                 // this defines a CORS policy called "default"
                 options.AddPolicy("default", policy =>
                 {
-                    policy.WithOrigins("http://localhost:8082")
+                    policy.WithOrigins("http://singlepageapp:8082")
                         .AllowAnyHeader()
                         .AllowAnyMethod();
                 });
