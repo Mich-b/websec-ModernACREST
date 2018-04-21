@@ -35,7 +35,27 @@ namespace IdentityServer.Configuration
                         "role"
                      }
                 },
- 
+                // Postman resource owner flow
+                new Client
+                {
+                    ClientId = "postman",
+                    ClientName = "postman",
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
+                    AllowedScopes = {
+                        //Not useful to include identityscopes, as an identity token is not returned anyway: https://github.com/IdentityServer/IdentityServer3/issues/1782
+                        //IdentityServerConstants.StandardScopes.OpenId,
+                        //IdentityServerConstants.StandardScopes.Profile,
+                        //IdentityServerConstants.StandardScopes.Email,
+                        //IdentityServerConstants.StandardScopes.Address,
+                        //"role",
+                        "dummyapi.read"
+                    }
+                },
+
             };
         }
     }
