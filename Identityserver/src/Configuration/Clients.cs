@@ -35,7 +35,28 @@ namespace IdentityServer.Configuration
                         "role"
                      }
                 },
- 
+                // JavaScript Client
+                new Client
+                {
+                    ClientId = "SPA",
+                    ClientName = "JavaScript SPA Client",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+
+                    RedirectUris =           { "http://singlepageapp:8082/callback.html" },
+                    PostLogoutRedirectUris = { "http://singlepageapp:8082/index.html" },
+                    AllowedCorsOrigins =     { "http://singlepageapp:8082" },
+
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.Email,
+                        IdentityServerConstants.StandardScopes.Address,
+                        "role",
+                        "productapi.read"
+                    }
+                }
             };
         }
     }
