@@ -9,6 +9,8 @@ Make sure to add the following items to your hosts file:
 127.0.0.1	identityserver
 127.0.0.1	movieswebapp
 127.0.0.1	shibbolethidp
+127.0.0.1	singlepageapp
+127.0.0.1	productapi
 ```
 
 Then run the following commands:
@@ -23,8 +25,10 @@ docker-compose -f docker-compose.yml up
 * Movieswebapp (SAML SP - OIDC RP) runs on http://movieswebapp:8081
 * Identityserver (OP) runs on http://identityserver:8080
 * Shibboleth (SAML IdP) runs on http://shibbolethidp:8090
+* Single page javascript app (OIDC RP) runs on http://singlepageapp:8082
+* Product API (OAuth2 resource server) runs on http://productapi:8083
 
-You typically want to go to the movieswebapp to start.
+You typically want to go to the movieswebapp to start. However, this is limited to authentication since we do not call an external API. That's why the singlepageapp was added, which provides a nice example of how to call a REST API. 
 
 ## Prerequisites
 
