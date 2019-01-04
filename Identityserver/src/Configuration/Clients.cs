@@ -18,9 +18,13 @@ namespace IdentityServer.Configuration
                 {
                     ClientId = "movieswebapp",
                     ClientName = "The Movie App",
-                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowedGrantTypes = GrantTypes.Code,
                     AllowAccessTokensViaBrowser = true,
                     AlwaysIncludeUserClaimsInIdToken = true,
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
 
                     RedirectUris =           { "http://movieswebapp:8081/signin-oidc" },
                     PostLogoutRedirectUris = { "http://movieswebapp:8081/signout-callback-oidc" },
@@ -40,9 +44,10 @@ namespace IdentityServer.Configuration
                 {
                     ClientId = "SPA",
                     ClientName = "JavaScript SPA Client",
-                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowedGrantTypes = GrantTypes.Code,
                     AllowAccessTokensViaBrowser = true,
-
+                    RequirePkce = true,
+                    RequireClientSecret = false,
                     RedirectUris =           { "http://singlepageapp:8082/callback.html" },
                     PostLogoutRedirectUris = { "http://singlepageapp:8082/index.html" },
                     AllowedCorsOrigins =     { "http://singlepageapp:8082" },

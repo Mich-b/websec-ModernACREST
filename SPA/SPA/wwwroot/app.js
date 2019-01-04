@@ -22,7 +22,7 @@ var config = {
     authority: "http://identityserver:8080",
     client_id: "SPA",
     redirect_uri: "http://singlepageapp:8082/callback.html",
-    response_type: "id_token token",
+    response_type: "code",
     scope: "openid profile role productapi.read",
     post_logout_redirect_uri: "http://singlepageapp:8082/index.html",
 };

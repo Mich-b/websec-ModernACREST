@@ -1,17 +1,16 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <title>oidc-client test</title>
+    <link rel='stylesheet' href='app.css'>
 </head>
 <body>
-    <script src="oidc-client.js"></script>
-    <script>
-        new Oidc.UserManager().signinRedirectCallback().then(function () {
-            window.location = "index.html";
-        }).catch(function (e) {
-            console.error(e);
-        });
-    </script>
+    <div>
+        <a href="index.html">back to sample</a>
+    </div>
+    <pre id='out'></pre>
+    <script src='log.js'></script>
+    <script src='oidc-client.js'></script>
+    <script src='code-identityserver-sample-callback.js'></script>
 </body>
 </html>

@@ -76,7 +76,8 @@ namespace MoviesWebApp
                     options.RequireHttpsMetadata = false;
 
                     options.ClientId = "movieswebapp";
-                    options.ResponseType = "id_token";
+                    options.ClientSecret = "secret";
+                    options.ResponseType = "code";
                     options.SaveTokens = true;
 
                     options.Scope.Add("openid");
