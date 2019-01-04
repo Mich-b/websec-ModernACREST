@@ -9,10 +9,10 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using MoviesWebApp.Authorization.Requirements;
 using System.Security.Cryptography.X509Certificates;
-using Kentor.AuthServices;
-using Kentor.AuthServices.Metadata;
-using Kentor.AuthServices.WebSso;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Sustainsys.Saml2;
+using Sustainsys.Saml2.Metadata;
+using Sustainsys.Saml2.WebSso;
 
 namespace MoviesWebApp
 {
@@ -48,7 +48,7 @@ namespace MoviesWebApp
                 .AddSaml2("Saml2", options =>
                 {
                     options.SPOptions.ModulePath = "Saml2";
-                    options.SPOptions.EntityId = new Microsoft.IdentityModel.Tokens.Saml2.Saml2NameIdentifier("http://movieswebapp:8081");
+                    options.SPOptions.EntityId = new EntityId("http://movieswebapp:8081");
                     var idp = new IdentityProvider(
                         new EntityId("http://shibbolethidp:8090/idp/shibboleth"), options.SPOptions)
                     {
@@ -61,10 +61,10 @@ namespace MoviesWebApp
                     idp.SigningKeys.AddConfiguredKey(new X509Certificate2("idp-signing.crt"));
                     options.IdentityProviders.Add(idp);
                     options.SPOptions.ServiceCertificates.Add(
-                        new Kentor.AuthServices.ServiceCertificate()
+                        new ServiceCertificate()
                         {
                             Certificate = new X509Certificate2("Sustainsys.Saml2.Tests.pfx"),
-                            Use = Kentor.AuthServices.CertificateUse.Both,
+                            Use = CertificateUse.Both,
                             //the following can be used to set the KeyDescriptor use value. If not set, the key is unspecified (meaning it can be used both for signing as well as encryption)
                             //MetadataPublishOverride = MetadataPublishOverrideType.PublishEncryption,
                         });
