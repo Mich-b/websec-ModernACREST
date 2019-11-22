@@ -76,6 +76,8 @@ services:
     build: ./ldap/
     networks:
      - default
+    ports:
+      - "389:389"
 
 secrets:
   idp_backchannel:
