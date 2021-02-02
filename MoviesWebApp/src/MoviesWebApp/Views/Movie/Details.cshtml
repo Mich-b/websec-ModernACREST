@@ -95,11 +95,19 @@
                     <td>@review.Stars</td>
                     <td>@review.Comment</td>
                     <td>
-                        @{ 
+                        @{
                             var editAuthz = await authorization.AuthorizeAsync(User, review, MoviesWebApp.Authorization.Requirements.ReviewOperationsCrudHandler.ReviewOperations.Update);
+                            var deleteAuthz = await authorization.AuthorizeAsync(User, review, MoviesWebApp.Authorization.Requirements.ReviewOperationsCrudHandler.ReviewOperations.Delete);
                             if (editAuthz.Succeeded)
                             {
                                 <a asp-action="Edit" asp-controller="Review" asp-route-id="@review.Id" class="btn btn-primary">edit</a>
+                            }
+                            if (deleteAuthz.Succeeded)
+                            {
+                    <form action="/Review/Delete" method="post">
+                        <input type="hidden" asp-for="@review.Id" name="reviewId" />
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
                             }
                         }
                     </td>

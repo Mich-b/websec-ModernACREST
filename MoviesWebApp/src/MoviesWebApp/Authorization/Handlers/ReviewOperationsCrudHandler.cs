@@ -19,12 +19,15 @@ namespace MoviesWebApp.Authorization.Handlers
 
             // Succeed if the scope array contains the required scope
             //Always succeed if the role is admin
-            if (context.User.HasClaim("role", "Admin") &&
-                requirement.Name == ReviewOperations.Delete.Name)
-                context.Succeed(requirement);
+            if (context.User.HasClaim("role", "Admin"))
+            {
+            context.Succeed(requirement);
+            }
+
+
 
             //Only if you wrote the review, you can edit it
-            if (requirement == ReviewOperations.Update)
+            else if (requirement == ReviewOperations.Update)
             {
                 var sub = context.User.FindFirst("sub")?.Value;
                 if (sub != null && review.UserId == sub)

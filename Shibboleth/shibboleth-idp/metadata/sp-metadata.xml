@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EntityDescriptor ID="_df136d94-0507-4ec0-a4c2-0b584191da21" entityID="http://movieswebapp:8081" cacheDuration="PT1H" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
+<EntityDescriptor ID="_df136d94-0507-4ec0-a4c2-0b584191da21" entityID="https://movieswebapp:4431" cacheDuration="PT1H" xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion" xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
 	<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
 		<SignedInfo>
 			<CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
@@ -28,9 +28,9 @@
 				</X509Data>
 			</KeyInfo>
 		</KeyDescriptor>
-		<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://movieswebapp:8081/Saml2/Logout" />
-		<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://movieswebapp:8081/Saml2/Logout" />
-		<AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://movieswebapp:8081/Saml2/Acs" index="0" isDefault="true" />
-		<AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="http://movieswebapp:8081/Saml2/Acs" index="1" isDefault="false" />
+		<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://movieswebapp:4431/Saml2/Logout" />
+		<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://movieswebapp:4431/Saml2/Logout" />
+		<AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://movieswebapp:4431/Saml2/Acs" index="0" isDefault="true" />
+		<AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="https://movieswebapp:4431/Saml2/Acs" index="1" isDefault="false" />
 	</SPSSODescriptor>
 </EntityDescriptor>

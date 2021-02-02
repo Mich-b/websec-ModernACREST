@@ -22,6 +22,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "applicationUrl": "http://singlepageapp:8082"
+        "sslport": 4432
     }
   }
 }

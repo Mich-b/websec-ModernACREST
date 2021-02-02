@@ -5,7 +5,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Authorization;
-using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using MoviesWebApp.Authorization.Requirements;
 using System.Security.Cryptography.X509Certificates;
@@ -13,6 +12,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Sustainsys.Saml2;
 using Sustainsys.Saml2.Metadata;
 using Sustainsys.Saml2.WebSso;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.Extensions.Hosting;
 
 namespace MoviesWebApp
 {
@@ -43,12 +44,13 @@ namespace MoviesWebApp
                 {
                     options.LoginPath = "/Account/Login";
                     options.AccessDeniedPath = "/Account/AccessDenied";
+                    options.Cookie.SecurePolicy = Microsoft.AspNetCore.Http.CookieSecurePolicy.Always;
                 })
 
                 .AddSaml2("Saml2", options =>
                 {
                     options.SPOptions.ModulePath = "Saml2";
-                    options.SPOptions.EntityId = new EntityId("http://movieswebapp:8081");
+                    options.SPOptions.EntityId = new EntityId("https://movieswebapp:4431");
                     var idp = new IdentityProvider(
                         new EntityId("http://shibbolethidp:8090/idp/shibboleth"), options.SPOptions)
                     {
@@ -72,9 +74,8 @@ namespace MoviesWebApp
 
                 .AddOpenIdConnect("oidc", options =>
                 {
-                    options.Authority = "http://identityserver:8080/";
-                    options.RequireHttpsMetadata = false;
-
+                    options.Authority = "https://identityserver:4430/";
+                    options.RequireHttpsMetadata = true;
                     options.ClientId = "movieswebapp";
                     options.ClientSecret = "secret";
                     options.ResponseType = "code";
@@ -125,11 +126,12 @@ namespace MoviesWebApp
                     .RequireAuthenticatedUser()
                     .Build();
                 options.Filters.Add(new AuthorizeFilter(policy));
+                options.EnableEndpointRouting = false;
             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -139,7 +141,7 @@ namespace MoviesWebApp
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseAuthentication();
 

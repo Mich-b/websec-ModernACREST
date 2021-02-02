@@ -11,30 +11,13 @@ namespace IdentityServer.Configuration
         //ApiResource controls what goes into the access token for the API.
         public static IEnumerable<IdentityServer4.Models.ApiResource> GetApiResources()
         {
-            return new[]
+            // extended version if more control is needed
+            return new List<ApiResource>
             {           
-                // extended version if more control is needed
-                new IdentityServer4.Models.ApiResource
+                new IdentityServer4.Models.ApiResource("productapi", "Product API")
                 {
-                    //name will be used for audience
-                    Name = "productapi",
-                    // include the following user claims in access token (in addition to subject id)
-                    //UserClaims = { JwtClaimTypes.PreferredUserName },
-
                     // this API defines two scopes
-                    Scopes =
-                    {
-                        new Scope()
-                        {
-                            Name = "productapi.read",
-                            DisplayName = "Read access to product API",
-                        },
-                        new Scope
-                        {
-                            Name = "productapi.readwrite",
-                            DisplayName = "Full access to product API"
-                        }
-                    }
+                    Scopes = { "productapi.readwrite", "productapi.read" }
                 }
             };
         }

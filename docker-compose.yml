@@ -11,11 +11,18 @@ services:
       context: ./Identityserver
       dockerfile: src/Dockerfile
     environment:
-      - ASPNETCORE_URLS=http://+:8080
+      - ASPNETCORE_URLS=https://+:4430;http://+:8080
+      #demo https certificate details
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=password
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/run/secrets/san_certkey
+      #end of development certificate details
     ports:
       - "8080:8080"
+      - "4430:4430"
     networks:
      - default
+    secrets:
+     - source: san_certkey  
 
   movieswebapp:
     image: movieswebapp
@@ -23,11 +30,18 @@ services:
       context: ./MoviesWebApp
       dockerfile: src/Dockerfile
     environment:
-      - ASPNETCORE_URLS=http://+:8081
+      - ASPNETCORE_URLS=https://+:4431;http://+:8081
+      #demo https certificate details
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=password
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/run/secrets/san_certkey
+      #end of development certificate details
     ports:
       - "8081:8081"
+      - "4431:4431"
     networks:
      - default
+    secrets:
+     - source: san_certkey  
 
   singlepageapp:
     image: singlepageapp
@@ -35,11 +49,18 @@ services:
       context: ./SPA
       dockerfile: Dockerfile
     environment:
-      - ASPNETCORE_URLS=http://+:8082
+      - ASPNETCORE_URLS=https://+:4432;http://+:8082
+      #demo https certificate details
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=password
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/run/secrets/san_certkey
+      #end of development certificate details
     ports:
       - "8082:8082"
+      - "4432:4432"
     networks:
-     - default 
+     - default
+    secrets:
+     - source: san_certkey  
 
   productapi:
     image: productapi
@@ -47,11 +68,18 @@ services:
       context: ./ProductAPI
       dockerfile: Dockerfile
     environment:
-      - ASPNETCORE_URLS=http://+:8083
+      - ASPNETCORE_URLS=https://+:4433;http://+:8083
+      #demo https certificate details
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=password
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/run/secrets/san_certkey
+      #end of development certificate details
     ports:
       - "8083:8083"
+      - "4433:4433"
     networks:
-     - default     
+     - default  
+    secrets:
+     - source: san_certkey     
   
   shibboleth:
     build: ./Shibboleth/
@@ -94,3 +122,5 @@ secrets:
     file: ./secrets/simplesamlphp/server.pem
   sp_key:
     file: ./secrets/sp/sp-key.pem
+  san_certkey:
+    file: ./secrets/idp/ModernACRestSan.pfx

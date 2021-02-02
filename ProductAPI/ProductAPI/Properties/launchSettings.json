@@ -24,6 +24,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "applicationUrl": "http://productapi:8083/"
+        "sslport": 4433
     }
   }
 }

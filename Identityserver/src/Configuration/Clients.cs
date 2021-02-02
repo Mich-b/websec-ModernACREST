@@ -26,9 +26,9 @@ namespace IdentityServer.Configuration
                         new Secret("secret".Sha256())
                     },
 
-                    RedirectUris =           { "http://movieswebapp:8081/signin-oidc" },
-                    PostLogoutRedirectUris = { "http://movieswebapp:8081/signout-callback-oidc" },
-                    AllowedCorsOrigins =     { "http://movieswebapp:8081" },
+                    RedirectUris =           { "https://movieswebapp:4431/signin-oidc" },
+                    PostLogoutRedirectUris = { "https://movieswebapp:4431/signout-callback-oidc" },
+                    AllowedCorsOrigins =     { "https://movieswebapp:4431" },
 
                     AllowedScopes =
                     {
@@ -48,9 +48,9 @@ namespace IdentityServer.Configuration
                     AllowAccessTokensViaBrowser = true,
                     RequirePkce = true,
                     RequireClientSecret = false,
-                    RedirectUris =           { "http://singlepageapp:8082/callback.html" },
-                    PostLogoutRedirectUris = { "http://singlepageapp:8082/index.html" },
-                    AllowedCorsOrigins =     { "http://singlepageapp:8082" },
+                    RedirectUris =           { "https://singlepageapp:4432/callback.html" },
+                    PostLogoutRedirectUris = { "https://singlepageapp:4432/index.html" },
+                    AllowedCorsOrigins =     { "https://singlepageapp:4432" },
 
                     AllowedScopes =
                     {
@@ -59,6 +59,7 @@ namespace IdentityServer.Configuration
                         IdentityServerConstants.StandardScopes.Email,
                         IdentityServerConstants.StandardScopes.Address,
                         "role",
+                        "productapi",
                         "productapi.read"
                     }
                 }

@@ -19,12 +19,12 @@ document.getElementById("logout").addEventListener("click", logout, false);
 
 
 var config = {
-    authority: "http://identityserver:8080",
+    authority: "https://identityserver:4430",
     client_id: "SPA",
-    redirect_uri: "http://singlepageapp:8082/callback.html",
+    redirect_uri: "https://singlepageapp:4432/callback.html",
     response_type: "code",
     scope: "openid profile role productapi.read",
-    post_logout_redirect_uri: "http://singlepageapp:8082/index.html",
+    post_logout_redirect_uri: "https://singlepageapp:4432/index.html",
 };
 var mgr = new Oidc.UserManager(config);
 
@@ -46,7 +46,7 @@ function login() {
 
 function api() {
     mgr.getUser().then(function (user) {
-        var url = "http://productapi:8083/api/product";
+        var url = "https://productapi:4433/api/product";
 
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url);
