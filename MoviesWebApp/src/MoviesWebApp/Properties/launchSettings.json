@@ -17,8 +17,8 @@
     },
     "MoviesWebApp": {
       "commandName": "Project",
-      "applicationUrl": "http://localhost:8081/"
-        "sslport":  4431
+      "applicationUrl": "http://localhost:8081/",
+       "sslport":  4431
     }
   }
 }

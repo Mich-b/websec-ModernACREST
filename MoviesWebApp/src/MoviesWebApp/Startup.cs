@@ -14,6 +14,7 @@ using Sustainsys.Saml2.Metadata;
 using Sustainsys.Saml2.WebSso;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.Extensions.Hosting;
+using System.Net.Http;
 
 namespace MoviesWebApp
 {
@@ -91,6 +92,11 @@ namespace MoviesWebApp
                         NameClaimType = "name",
                         RoleClaimType = "role"
                     };
+
+                    //do not use the following in production - it disables certificate validation to avoid having to update this lab. 
+                    HttpClientHandler handler = new HttpClientHandler();
+                    handler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
+                    options.BackchannelHttpHandler = handler;
 
                     //this can be used to add claims on the fly
                     //options.Events = new OpenIdConnectEvents
