@@ -1,3 +1,6 @@
+# todo
+Base OPA decision on token
+
 # Modern access control 
 
 Set of Docker containers used during various trainings about modern access control. The focus currently is on SAML and OpenID Connect, as well as policy-based authorization. 
