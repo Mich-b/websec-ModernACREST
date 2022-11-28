@@ -11,6 +11,7 @@ Make sure to add the following items to your hosts file:
 127.0.0.1	shibbolethidp
 127.0.0.1	singlepageapp
 127.0.0.1	productapi
+127.0.0.1   opaserver
 ```
 
 Then run the following commands:

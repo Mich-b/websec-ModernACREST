@@ -15,6 +15,7 @@
 
 document.getElementById("login").addEventListener("click", login, false);
 document.getElementById("api").addEventListener("click", api, false);
+document.getElementById("shopapi").addEventListener("click", shopapi, false);
 document.getElementById("logout").addEventListener("click", logout, false);
 
 
@@ -47,6 +48,20 @@ function login() {
 function api() {
     mgr.getUser().then(function (user) {
         var url = "https://productapi:4433/api/product";
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url);
+        xhr.onload = function () {
+            log(xhr.status, JSON.parse(xhr.responseText));
+        }
+        xhr.setRequestHeader("Authorization", "Bearer " + user.access_token);
+        xhr.send();
+    });
+}
+
+function shopapi() {
+    mgr.getUser().then(function (user) {
+        var url = "https://productapi:4433/api/shop";
 
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url);
