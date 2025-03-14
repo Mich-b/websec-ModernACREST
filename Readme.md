@@ -1,6 +1,3 @@
-# todo
-Base OPA decision on token
-
 # Modern access control 
 
 Set of Docker containers used during various trainings about modern access control. The focus currently is on SAML and OpenID Connect, as well as policy-based authorization. 
@@ -14,14 +11,13 @@ Make sure to add the following items to your hosts file:
 127.0.0.1	shibbolethidp
 127.0.0.1	singlepageapp
 127.0.0.1	productapi
-127.0.0.1   opaserver
 ```
 
 Then run the following commands:
 
 ```
-git clone https://github.com/Mich-b/ModernACREST.git
-cd ModernACREST
+git clone https://github.com/Mich-b/websec-ModernACREST.git
+cd websec-ModernACREST
 docker-compose -f docker-compose.yml build
 docker-compose -f docker-compose.yml up
 ```
