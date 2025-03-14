@@ -83,8 +83,8 @@ services:
   
   shibboleth:
     build: ./Shibboleth/
-    depends_on: 
-      - ldap
+    #depends_on: 
+    #  - ldap
     environment:
      - JETTY_MAX_HEAP=64m
      - JETTY_BROWSER_SSL_KEYSTORE_PASSWORD=password
@@ -100,12 +100,12 @@ services:
      - source: idp_signing
      - source: idp_sealer     
    
-  ldap:
-    build: ./ldap/
-    networks:
-     - default
-    ports:
-      - "389:389"
+  # ldap:
+  #   build: ./ldap/
+  #   networks:
+  #    - default
+  #   ports:
+  #     - "389:389"
 
   opaserver:
     image: openpolicyagent/opa:latest
